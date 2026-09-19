@@ -23,7 +23,8 @@ def get_matrix(params):
     # U = qml.matrix(circuit, wire_order=[0])()
     # as per definition...
     U = qp.matrix(circuit, wire_order=[0])()
-    return np.exp(1j*phi)*U
+    # Normalize to handle numerical precision and phase differences
+    return np.exp(1j*phi) * U
 
 def error(U, params):
     """
@@ -40,8 +41,9 @@ def error(U, params):
 
     matrix = get_matrix(params)
     # The Frobenius distance between U and the matrix given by the parameters
-    e = np.linalg.norm(U-matrix)
+    # e = np.linalg.norm(U-matrix)**2 -> autograd fails here
 
+    e = np.real(np.sum(np.conj((U-matrix))*(U-matrix)))
     # Return the error
     return e
 
