@@ -24,7 +24,6 @@ def hf(num_qubits):
     Returns:
         (numpy.tensor): The HF state.
     """
-    # Put your solution here #
     # number of spin-orbitals = num_qubits
     state = qp.qchem.hf_state(2, num_qubits)
     
@@ -61,7 +60,6 @@ def run_VQE(coordinates):
             (float): The expectation value of the hydrogen Hamiltonian.
         """
 
-        # Put your solution here #
         s_wires, d_wires = qp.qchem.excitations_to_wires(singles, doubles)
         qp.UCCSD(weights, hamiltonian.wires,s_wires, d_wires, hf_state)
         return qp.expval(hamiltonian)
