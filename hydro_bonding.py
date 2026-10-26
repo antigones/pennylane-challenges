@@ -60,9 +60,12 @@ def run_VQE(coordinates):
             (float): The expectation value of the hydrogen Hamiltonian.
         """
 
-        s_wires, d_wires = qp.qchem.excitations_to_wires(singles, doubles)
-        qp.UCCSD(weights, hamiltonian.wires,s_wires, d_wires, hf_state)
+        #s_wires, d_wires = qp.qchem.excitations_to_wires(singles, doubles)
+        #qp.UCCSD(weights, hamiltonian.wires,s_wires, d_wires, hf_state)
+        #return qp.expval(hamiltonian)
+        qp.AllSinglesDoubles(weights, hamiltonian.wires, hf_state,singles, doubles)
         return qp.expval(hamiltonian)
+        
 
 
     np.random.seed(1234)
