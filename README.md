@@ -33,6 +33,61 @@ Optimizes a variational quantum circuit to minimize the expectation value of a g
 - Gradient-based optimization
 - Hamiltonian expectation values
 
+### 4. **Hydro Bonding** (`hydro_bonding.py`)
+Uses the Variational Quantum Eigensolver (VQE) to estimate the ground-state energy of a hydrogen molecule at different atomic separations. The circuit is prepared from a Hartree-Fock state and optimized with single and double excitations.
+
+**Key Concepts:**
+- Molecular Hamiltonians and quantum chemistry
+- Hartree-Fock state preparation
+- VQE and excitation-based ansätze
+
+### 5. **Simple Trotterization** (`simple_trotterization.py`)
+Simulates time evolution under a Hamiltonian composed of XX and ZZ interactions by applying a first-order Trotter step repeatedly, then returns the computational-basis probabilities.
+
+**Key Concepts:**
+- Hamiltonian time evolution
+- Trotter-Suzuki approximation
+- IsingXX and IsingZZ gates
+
+### 6. **Returning Probabilities** (`returning_probabilities.py`)
+Applies an RX rotation to an initial qubit state and returns the probabilities of the computational-basis outcomes.
+
+**Key Concepts:**
+- PennyLane QNodes
+- Parameterized rotation gates
+- Probability measurements
+
+### 7. **Undo That Computation** (`undo_that_computation.py`)
+Implements a reversible quantum circuit for the classical AND operation using phase kickback and measures the result.
+
+**Key Concepts:**
+- Reversible logic
+- Controlled operations
+- Phase kickback
+
+### 8. **States and Probabilities** (`states_and_probabilities.py`)
+Builds a single-qubit state-vector simulation: initialize the |0⟩ state, apply a unitary, and sample computational-basis measurements.
+
+**Key Concepts:**
+- State-vector representation
+- Unitary operations
+- Sampling and measurement
+
+### 9. **My First Quantum Simulation** (`my_first_quantum_simulation.py`)
+Creates a two-qubit circuit with RX rotations and returns the probabilities of the computational-basis states.
+
+**Key Concepts:**
+- Quantum circuit construction
+- RX rotations
+- Multi-qubit probability measurements
+
+### 10. **Universality of Quantum Gates** (`universality_of_quantum_gates.py`)
+Trains parameters for a sequence of single-qubit rotations and a global phase to reproduce a target unitary matrix.
+
+**Key Concepts:**
+- Single-qubit gate decompositions
+- Matrix representation of quantum circuits
+- Gradient-based parameter optimization
 
 ## Requirements
 
@@ -55,4 +110,11 @@ Each challenge can be run as a standalone script:
 python3 dont_hit_the_ground.py
 python3 ising_uprising.py
 python3 keep_expectations_low.py
+python3 hydro_bonding.py
+python3 simple_trotterization.py
+python3 returning_probabilities.py
+python3 undo_that_computation.py
+python3 states_and_probabilities.py
+python3 my_first_quantum_simulation.py
+python3 universality_of_quantum_gates.py
 ```
