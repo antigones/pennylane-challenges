@@ -89,6 +89,15 @@ Trains parameters for a sequence of single-qubit rotations and a global phase to
 - Matrix representation of quantum circuits
 - Gradient-based parameter optimization
 
+### 11. **Hamiltonians and Operator Arithmetic** (`hamiltonians_and_operator_aritmethic.py`)
+Constructs a Hamiltonian from sums and products of Pauli operators, prepares a uniform superposition with Hadamard gates, and measures the Hamiltonian's expectation value.
+
+**Key Concepts:**
+- Hamiltonian construction
+- Pauli operator arithmetic
+- Expectation values
+- Hadamard state preparation
+
 ## Requirements
 
 - Python 3.7+
@@ -117,4 +126,5 @@ python3 undo_that_computation.py
 python3 states_and_probabilities.py
 python3 my_first_quantum_simulation.py
 python3 universality_of_quantum_gates.py
+python3 hamiltonians_and_operator_aritmethic.py
 ```
