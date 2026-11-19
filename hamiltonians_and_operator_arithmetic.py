@@ -15,7 +15,7 @@ def hamiltonian(num_wires):
 
     # Put your solution here #
     pauli_x_sum = sum([qp.PauliX(i) @ qp.PauliX(j) for i in range(num_wires) for j in range(num_wires) if i < j])
-    pauli_z_sum = sum([qp.PauliZ(i) for i in range(num_wires-1)])
+    pauli_z_sum = sum([qp.PauliZ(i) for i in range(num_wires)])
     K = 1/3 * pauli_x_sum - pauli_z_sum
     return K
 
